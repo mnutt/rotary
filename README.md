@@ -15,7 +15,7 @@ Some things I wanted it to be able to do:
 * Dial out to a short list of family contacts. It's not something I think about much, but when I was a kid there was a phone on the wall and once I could reach it, I could use it. Now, if you're not old enough to have a cell phone, you also can't call anyone at all.
 * Allow incoming calls from that same list of family contacts. Requires an actual phone number.
 * On a different extension, hear a random joke.
-* Hear a random k-pop song.
+* ~~Hear a random k-pop song.~~ This was an easy thing to start with, but not actually that fun. The audio quality is pretty terrible for music.
 * Get NYC MTA train status. My son loves the subway, and is already pretty proficient at using a unix terminal to query the status of different trains, but it would be fun to hear an announcement too.
 
 ## Equipment
