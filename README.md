@@ -6,7 +6,7 @@ This is an account of a project we recently did. The files aren't intended to co
 
 ## Background
 
-Recently we went to the MoMA with my 4 year old son. Some modern art is hard to appreciate as a kid, but the exhibit he _loved_ was one where they had a bunch of rotary phones and you could dial a number and it would read you a poem. I decided I wanted to replicate something like this at home.
+Recently we went to the MoMA with my 4 year old son. Some modern art is hard to appreciate as a kid, but the exhibit he _loved_ was one where they had a bunch of rotary phones and you could [dial a number and it would read you a poem](https://www.moma.org/collection/works/294325). I wanted to replicate something like this at home.
 
 ## Features
 
@@ -22,9 +22,9 @@ Some things I wanted it to be able to do:
 
 60 years ago, every household in America had one or more rotary phones, so they're not exactly hard to find. I bought one off of Ebay for ~$25. Not all of them are guaranteed to be in working order, but these things are pretty solid so if the outside looks undamaged, it's likely alright. Worst case you might have to spend another $25 and try again. I got a [Western Electric Bell 500](https://en.wikipedia.org/wiki/Model_500_telephone).
 
-If we lived in 1960 (or even 2000) I could plug it into the wall and the project would be mostly done. But if I want to do anything interesting, I need to adapt it to VoIP. I used a [Grandstream GS-HT802](https://www.grandstream.com/products/gateways-and-atas/analog-telephone-adaptors/product/ht802) for this which lists rotary support in the specs. This set me back about $40 from Amazon.
+If we lived in 1960 (or even 2000) I could plug it into the wall and the project would be mostly done. But if I want to do anything interesting, I need to adapt it to VoIP. My initial thought was to hack up the inside of the phone and use a Raspberry Pi or ESP32 or something, but between driving 48V DC or replacing most of the internals it seemed a bit out of reach. Instead, I used the phone unmodified and connected it to a [Grandstream GS-HT802](https://www.grandstream.com/products/gateways-and-atas/analog-telephone-adaptors/product/ht802) which lists rotary support in the specs. This currently goes for ~$50 [on Amazon](https://www.amazon.com/Grandstream-GS-HT802-Analog-Telephone-Adapter/dp/B01JH7MYKA).
 
-To accomplish the other features, I wanted to use Asterisk, an open source PBX. Ideally I would have been able to attach the Grandstream adapter directly to the machine running the Asterisk server. But for the equipment I had, I ended up attaching the Grandstream to the Raspberry Pi in my son's room, and having it bridge wifi to an old server under my desk running Asterisk. At some point I'd like to consolidate these into a more powerful Raspberry Pi 5 that runs Asterisk and is directly connected to the GrandStream.
+To accomplish the other features, I wanted to use Asterisk, an open source PBX. Using Asterisk to make a phone that tells you jokes is a bit like using Kubernetes to host your blog, but I had a little bit of experience with it from ~20 years ago and it seemed to do everything I wanted. Ideally I would have been able to attach the Grandstream adapter directly to the machine running the Asterisk server. But for the equipment I had, I ended up attaching the Grandstream to the Raspberry Pi in my son's room, and having it bridge wifi to an old server under my desk running Asterisk. This hasn't flaked out yet but seems like it could be brittle. At some point I'd like to consolidate these into a more powerful Raspberry Pi 5 that runs Asterisk and is directly connected to the GrandStream.
 
 ![Diagram of equipment setup](./images/diagram.png)
 
@@ -349,3 +349,9 @@ This one needs the most future work. Conceptually it's mostly a simpler version 
 While I need to figure out how to get piper to just wait a bit, I also want to add support for knock-knock jokes, where it waits for the caller to actually say "who's there?". I don't think this needs to go nearly as far as actual speech-to-text, and could instead detect any kind of sound and probably be good enough.
 
 You also don't want a random joke: unless you have a really long list, you'll eventually end up with it telling the same joke twice in a row. This may be funny the first time, but gets old fast. Instead we need some way to tell a new joke each time.
+
+## Conclusion
+
+The physical aspects of the project held my son's attention the best, especially taking the phone cover off. (make sure it's unplugged!) Debugging SIP connections was by far the most tedious part of the project and I did most of that at night. But building out the phone menu was also a fun activity where I let him dictate what the numbers did and we drew out how it would work.
+
+By far the best part of the project is that he'll randomly call up his grandparents to talk. As an adult I talk to loved ones on the phone, but calls tend to be scheduled and coordinated in advance via text. An unexpected call triggers annoyance or concern. Four year olds have none of that, and are happy just to chat.
