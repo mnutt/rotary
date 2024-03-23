@@ -300,6 +300,8 @@ Make sure SIP routing is Active.
 
 Now try dialing "81" from your rotary phone. It should route to your recipient.
 
+I went back and forth a bit on setting up emergency service. (911, in the US) If you do this, you'll absolutely want to make sure your home address in Twilio is accurate. I haven't set up emergency dialing yet because while I can impress on my son the serious nature of calling 911, his friends might treat it more like a toy. Still, something worth considering.
+
 #### Receiving calls
 
 With our outbound setup, Asterisk could technically dial _any_ number but we limit which numbers can actually be dialed by only explicitly dialing them in `extensions.conf`. For receiving calls, we want to make sure we also limit it to specific callers. We could easily achieve "pass any call through" with the same TwiML Bin approach, but "limit to phone numbers x,y,z" is a bit too much for TwiML so I opted for a Twilio Function.
