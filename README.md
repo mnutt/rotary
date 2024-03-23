@@ -1,6 +1,8 @@
-# Rotary Phone
+# Rotary Phone Project
 
-This is an account of a project we recently did. It's mostly here to remind me how it works, but hopefully it's useful to others.
+![The phone in use](./images/header.jpg)
+
+This is an account of a project we recently did. The files aren't intended to constitute a cohesive runnable project, they're just a loose collection of scripts. It's mostly here to remind me how it works, but hopefully it's useful to others.
 
 ## Background
 
@@ -86,7 +88,7 @@ If you're not seeing any peers or any sip logs from asterisk, you can also use t
 
 At this point the phone is connecting to Asterisk and the real fun can begin. :)
 
-### Play a KPop song
+### Play a K-Pop song
 
 The easiest one first. Asterisk can play back an audio file, but is relatively limited in the types of files it can play. You'll likely need to convert your file to 8KHz wav. Then put something like this in `/etc/asterisk/extensions.conf`:
 
