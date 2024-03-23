@@ -35,6 +35,14 @@ Pretty much just plug the RJ11 port of the phone into port 1 on the GrandStream.
 * It's possible that your phone has been wired for a "party line" instead of regular service. This would require unscrewing the cover (make sure it's unplugged from the Grandstream) and a small amount of rewiring which differs based on your phone model.
 * The one I received _wasn't_ wired for a party line, but was effectively muted. I had to take the cover off and unhook part of the ringer. I haven't seen discussion of this online anywhere.
 
+Opening it up:
+
+![Inside the phone](./images/inside.jpg)
+
+After everything else checked out, I realized the ringer had been locked, and moved it to this position to fix:
+
+![Mute lever](./images/rotary_mute.jpg)
+
 ## Asterisk setup
 
 I installed Asterisk via dpkg on Ubuntu 22. Setup was made a little more complicated by the RPi wifi bridge, which meant that the Grandstream was techically behind NAT from the perspective of Asterisk. Asterisk is trying to move from legacy `sip` module to `pjsip`, but I was only able to get `sip` to work so I stuck with that. The `/etc/asterisk/sip.conf` relevant parts:
