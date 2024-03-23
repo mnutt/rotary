@@ -20,11 +20,13 @@ Some things I wanted it to be able to do:
 
 ## Equipment
 
-60 years ago, every household in America had one or more rotary phones, so they're not exactly hard to find. I bought one off of Ebay for $40. Not all of them are guaranteed to be in working order, but these things are pretty solid so if the outside looks undamaged, it's likely alright. Worst case you might have to spend another $40 and try again.
+60 years ago, every household in America had one or more rotary phones, so they're not exactly hard to find. I bought one off of Ebay for ~$25. Not all of them are guaranteed to be in working order, but these things are pretty solid so if the outside looks undamaged, it's likely alright. Worst case you might have to spend another $25 and try again. I got a [Western Electric Bell 500](https://en.wikipedia.org/wiki/Model_500_telephone).
 
-If we lived in 1960 (or even 2000) I could plug it into the wall and the project would be mostly done. But if I want to do anything interesting, I need to adapt it to VoIP. I used a Grandstream HS820 for this which lists rotary support in the specs. This set me back about $40 from Amazon.
+If we lived in 1960 (or even 2000) I could plug it into the wall and the project would be mostly done. But if I want to do anything interesting, I need to adapt it to VoIP. I used a [Grandstream GS-HT802](https://www.grandstream.com/products/gateways-and-atas/analog-telephone-adaptors/product/ht802) for this which lists rotary support in the specs. This set me back about $40 from Amazon.
 
 To accomplish the other features, I wanted to use Asterisk, an open source PBX. Ideally I would have been able to attach the Grandstream adapter directly to the machine running the Asterisk server. But for the equipment I had, I ended up attaching the Grandstream to the Raspberry Pi in my son's room, and having it bridge wifi to an old server under my desk running Asterisk. At some point I'd like to consolidate these into a more powerful Raspberry Pi 5 that runs Asterisk and is directly connected to the GrandStream.
+
+![Diagram of equipment setup](./images/diagram.png)
 
 ## Rotary Phone Setup
 
